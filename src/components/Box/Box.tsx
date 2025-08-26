@@ -7,13 +7,13 @@ import { BaseComponent } from "@/theme/BaseComponent";
 import { StyleSheet } from "@/theme/StyleSheet";
 
 interface BoxProps {
-    tag: any; // já sei, vou arrumar isso depois!
-    children: React.ReactNode;
-    stylesheet: StyleSheet;
+    tag?: any; // já sei, vou arrumar isso depois!
+    children?: React.ReactNode;
+    styleSheet?: StyleSheet;
 }
 
-export default function Box({ stylesheet, children, tag, ...props }: BoxProps) {
+export default function Box({ styleSheet, children, tag, ...props }: BoxProps) {
   const Tag = tag || "div";
 
-  return <BaseComponent as={Tag} stylesheet={stylesheet} {...props}>{children}</BaseComponent>;
+  return <BaseComponent as={Tag} styleSheet={styleSheet} {...props}>{children}</BaseComponent>;
 }

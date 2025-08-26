@@ -6,11 +6,11 @@ import { StyleSheet } from "@/theme/StyleSheet";
 import { parseStyleSheet } from "@displaykit/responsive_styles";
 
 interface StyledBaseComponent {
-    stylesheet?: StyleSheet;
+    styleSheet?: StyleSheet;
 }
 
 const StyledBaseComponent = styled.div<StyledBaseComponent>`
-    ${({ stylesheet }) => parseStyleSheet(stylesheet)}
+    ${({ styleSheet }) => parseStyleSheet(styleSheet)}
 `;
 
 export const BaseComponent = (props) => {
@@ -20,5 +20,5 @@ export const BaseComponent = (props) => {
 }
 
 BaseComponent.defaultProps = {
-    stylesheet: {},
+    styleSheet: {},
 };
