@@ -7,7 +7,7 @@ import { BaseComponent } from "@/theme/BaseComponent";
 import { StyleSheet } from "@/theme/StyleSheet";
 
 interface BoxProps {
-    tag?: any; // já sei, vou arrumar isso depois!
+    tag?: "main" | "div" | "section" | "article" | "ul" | string;
     children?: React.ReactNode;
     styleSheet?: StyleSheet;
 }

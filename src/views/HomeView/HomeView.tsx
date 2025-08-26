@@ -7,6 +7,7 @@ import Banner from "./patterns/Banner/Banner";
 
 //Styles
 import theme from "@/theme/theme";
+import Footer from "./patterns/Footer/Footer";
 
 export default function HomeView() {
   return(
@@ -14,7 +15,8 @@ export default function HomeView() {
         tag="main"
         styleSheet={{
           fontFamily: theme.typography.fontFamily,
-          backgroundColor: { xs: 'lightgray', md: 'lightblue', sm: 'lightgreen' },
+          backgroundColor: { xs: 'lightgray', md: 'lightblue', sm: 'lightgreen'},
+          flex: 1,
         }}
       >
       <Background />
@@ -22,6 +24,7 @@ export default function HomeView() {
       <Banner />
       <Feed />
       <Feed.Posts />
+      <Footer />
     </Box>
 
   ) 
