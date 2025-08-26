@@ -37,17 +37,23 @@ O projeto serve tanto como portfólio quanto como ambiente de estudos para prát
 ## 🧭 Estrutura do projeto (inicial)
 
 ```text
-.
-├── components/       # Componentes reutilizáveis (UI atoms, molecules, etc.)
-├── pages/            # Páginas do Next.js (rotas)
-├── public/           # Assets públicos (imagens, ícones)
-├── styles/           # Estilos globais e configurações do styled-components
-├── utils/            # Funções utilitárias e helpers
-├── hooks/            # Hooks customizados
-├── .eslintrc.js      # Configuração do ESLint
-├── .prettierrc       # Configuração do Prettier
-├── next.config.js    # Configuração do Next
-└── package.json
+src/
+├── app/                # Arquitetura do Next.js (App Router)
+│   ├── layout.tsx      # Layout global
+│   ├── page.tsx        # Página inicial
+│   ├── globals.css     # Estilos globais
+│   └── page.module.css # CSS escopo de página
+│
+├── components/         # Componentes reutilizáveis (Atomic Design)
+│   ├── atoms/          # Elementos básicos (ex: Background, Button)
+│   ├── molecules/      # Combinação simples de atoms (ex: Banner)
+│   ├── organisms/      # Seções completas (ex: Feed, Menu, Footer)
+│   └── templates/      # Estruturas de página (ex: Home)
+│
+├── theme/              # Sistema de estilos (BaseComponent, StyleSheet, theme)
+│
+├── public/             # Arquivos estáticos (favicon, imagens)
+└── ...
 ```
 
 ---
