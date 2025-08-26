@@ -1,12 +1,12 @@
 //Components
-import Box from "@/components/Box/Box";
-import Text from "@/components/Text/Text";
+import Box from "../Box/Box";
+import Text from "../Text/Text";
 
-export default function Menu() {
+export default function Background() {
   return(
     <Box tag="div" styleSheet={{backgroundColor: { xs: 'red', md: 'blue', sm: 'green' }}}>
         <Text>
-            Pega o pato, pega o pato
+            Reza 3 ave maria e vai meu filho
         </Text>
     </Box>
 

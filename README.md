@@ -103,7 +103,7 @@ http://localhost:3000
 
 ## 🧩 Componentização e padrões
 
-Em breve
+* Organização do projeto com Atomic Design System
 
 ---
 

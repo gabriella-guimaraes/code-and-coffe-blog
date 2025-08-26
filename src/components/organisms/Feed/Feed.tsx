@@ -1,7 +1,10 @@
-//Components
-import Box from "@/components/Box/Box";
-import Text from "@/components/Text/Text";
+  /* eslint-disable react/display-name */
 
+//Components
+import Box from "@/components/atoms/Box/Box";
+import Text from "@/components/atoms/Text/Text";
+
+//React
 import React from "react";
 
 interface FeedProps {
@@ -28,4 +31,3 @@ Feed.Posts = () => {
     </Box>
     )
 }
-

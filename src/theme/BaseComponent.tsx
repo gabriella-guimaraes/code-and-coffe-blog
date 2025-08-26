@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// import React, { JSX } from "react";
 
 //Styles
 import styled from "styled-components";
@@ -7,6 +9,11 @@ import { parseStyleSheet } from "@displaykit/responsive_styles";
 
 interface StyledBaseComponent {
     styleSheet?: StyleSheet;
+}
+
+interface BaseComponentProps extends React.HTMLAttributes<HTMLDivElement> {
+  styleSheet?: StyleSheet;
+  as?: any;
 }
 
 const StyledBaseComponent = styled.div<StyledBaseComponent>`
@@ -18,11 +25,9 @@ const StyledBaseComponent = styled.div<StyledBaseComponent>`
     ${({ styleSheet }) => parseStyleSheet(styleSheet)}
 `;
 
-export const BaseComponent = (props) => {
-    return (
-        <StyledBaseComponent {...props} />
-    )
-}
+export const BaseComponent = ({ styleSheet = {}, ...rest }: BaseComponentProps) => {
+  return <StyledBaseComponent styleSheet={styleSheet} {...rest} />;
+};
 
 BaseComponent.defaultProps = {
     styleSheet: {},

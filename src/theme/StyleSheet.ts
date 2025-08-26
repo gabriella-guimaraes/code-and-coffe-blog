@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Breakpoints } from "@displaykit/responsive_styles";
 
 //Generics

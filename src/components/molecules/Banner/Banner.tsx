@@ -1,5 +1,6 @@
-import Box from "@/components/Box/Box";
-import Text from "@/components/Text/Text";
+//Components
+import Box from "@/components/atoms/Box/Box";
+import Text from "@/components/atoms/Text/Text";
 
 export default function Banner() {
     return(
