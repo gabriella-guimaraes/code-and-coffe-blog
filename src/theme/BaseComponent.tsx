@@ -13,6 +13,8 @@ interface StyledBaseComponent {
 
 interface BaseComponentProps extends React.HTMLAttributes<HTMLDivElement> {
   styleSheet?: StyleSheet;
+  viewBox?: string;
+  xmlns?: string;
   as?: any;
 }
 

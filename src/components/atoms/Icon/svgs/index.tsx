@@ -1,0 +1,13 @@
+export { default as LinkedIn } from './linkedIn';
+export { default as DefaultIcon } from './defaultIcon';
+export { default as Email } from './email';
+export { default as GitHub } from './github';
+export { default as MenuIcon } from './menuIcon';
+export { default as Settings } from './settings';
+export { default as HomeIcon } from './homeIcon';
+export { default as Search } from './search';
+export { default as ArrowUp } from './arrowUp';
+export { default as Terminal } from './terminal';
+export { default as School }  from './school';
+export { default as Clock } from './clock';
+export { default as Logo } from './logo';
