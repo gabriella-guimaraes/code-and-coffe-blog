@@ -22,7 +22,7 @@ export default function HomeTemplate(){
             <Text tag="h2" variant="heading2">
                 Teste do h1
             </Text>
-            <Text tag="h3" variant="heading3">
+            <Text tag="h3" variant="body3">
                 Teste do h1
             </Text>
             </Box>

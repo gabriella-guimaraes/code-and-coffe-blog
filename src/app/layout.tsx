@@ -4,6 +4,7 @@ import "./globals.css";
 import GlobalStyle from "@/theme/GlobalStyle";
 import Menu from "@/components/organisms/Menu/Menu";
 import Footer from "@/components/organisms/Footer/Footer";
+import ThemeProvider from "@/theme/ThemeProvider";
 
 
 const roboto = Roboto({
@@ -29,12 +30,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GlobalStyle />
-      <body className={`${roboto.variable} ${spaceGrotesk.variable}`}>
-        <Menu />
-        {children}
-        <Footer />
-      </body>
+      <ThemeProvider>
+        <GlobalStyle />
+        <body className={`${roboto.variable} ${spaceGrotesk.variable}`}>
+          <Menu />
+          {children}
+          <Footer />
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
