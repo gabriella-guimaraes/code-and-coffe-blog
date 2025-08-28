@@ -8,14 +8,14 @@ import { StyleSheet } from "@/theme/StyleSheet";
 import { parseStyleSheet } from "@displaykit/responsive_styles";
 
 interface StyledBaseComponent {
-    styleSheet?: StyleSheet;
+  // prop transitória: não será forwardada ao DOM
+  $styleSheet?: StyleSheet;
 }
 
 interface BaseComponentProps extends React.HTMLAttributes<HTMLDivElement> {
   styleSheet?: StyleSheet;
-  viewBox?: string;
-  xmlns?: string;
   as?: any;
+  [key: string]: any;
 }
 
 const StyledBaseComponent = styled.div<StyledBaseComponent>`
@@ -24,11 +24,12 @@ const StyledBaseComponent = styled.div<StyledBaseComponent>`
     flex-direction: column;
     align-items: flex-start;
     flex-shrink: 0;
-    ${({ styleSheet }) => parseStyleSheet(styleSheet)}
+    ${({ $styleSheet }) => parseStyleSheet($styleSheet as any)}
 `;
 
 export const BaseComponent = ({ styleSheet = {}, ...rest }: BaseComponentProps) => {
-  return <StyledBaseComponent styleSheet={styleSheet} {...rest} />;
+  // enviar como prop transitória para evitar que apareça como atributo HTML
+  return <StyledBaseComponent $styleSheet={styleSheet} {...rest} />;
 };
 
 BaseComponent.defaultProps = {
