@@ -21,7 +21,7 @@ const iconSizes = {
 
 type IconSize = keyof typeof iconSizes;
 
-export default function Icon({ name, size = "md", styleSheet }: IconProps) {
+export default function Icon({ name, size = "md", styleSheet, ...props }: IconProps) {
   const CurrentIcon = icons[name as keyof typeof icons] || icons["DefaultIcon"];
   const sizeValue = iconSizes[size];
 
@@ -37,6 +37,7 @@ export default function Icon({ name, size = "md", styleSheet }: IconProps) {
       }}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <CurrentIcon />
     </BaseComponent>
