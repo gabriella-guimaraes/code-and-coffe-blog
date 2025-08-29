@@ -6,10 +6,12 @@
 import styled from "styled-components";
 import { StyleSheet } from "@/theme/StyleSheet";
 import { parseStyleSheet } from "@displaykit/responsive_styles";
+import React from "react";
 
 interface StyledBaseComponent {
   // prop transitória: não será forwardada ao DOM
   $styleSheet?: StyleSheet;
+  ref: any;
 }
 
 interface BaseComponentProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -27,11 +29,12 @@ const StyledBaseComponent = styled.div<StyledBaseComponent>`
     ${({ $styleSheet }) => parseStyleSheet($styleSheet as any)}
 `;
 
-export const BaseComponent = ({ styleSheet = {}, ...rest }: BaseComponentProps) => {
-  // enviar como prop transitória para evitar que apareça como atributo HTML
-  return <StyledBaseComponent $styleSheet={styleSheet} {...rest} />;
-};
+export const BaseComponent = React.forwardRef<HTMLElement, BaseComponentProps>(({ styleSheet = {}, ...rest }, ref) => {
+  return <StyledBaseComponent ref={ref as unknown} $styleSheet={styleSheet} {...rest} />;
+});
 
-BaseComponent.defaultProps = {
-    styleSheet: {},
-};
+BaseComponent.displayName = "BaseComponent";
+
+// BaseComponent.defaultProps = {
+//     styleSheet: {},
+// };
