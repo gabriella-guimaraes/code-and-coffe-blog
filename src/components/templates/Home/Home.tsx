@@ -45,9 +45,13 @@ export default function HomeTemplate(){
                     Testando o Text
                 </Text>
 
-                <ButtonBase textVariant="heading1" styleSheet={{backgroundColor: theme.colors.accent.x500}} href="https://music.youtube.com/watch?v=bfl76Sr-Rsk&si=oPyxlBgTTfC-6VuA">
+                <Button textVariant="heading1" href="https://music.youtube.com/watch?v=bfl76Sr-Rsk&si=oPyxlBgTTfC-6VuA">
                     Olha a musiquinha 2000s
-                </ButtonBase>
+                </Button>
+
+                <Button fullWidth={false}>
+                    Hola, amigos, como estão? Tranquilos?
+                </Button>
         </Box>
     )
 }

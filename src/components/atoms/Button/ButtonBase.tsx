@@ -19,7 +19,7 @@ import { useRouter } from 'next/navigation';
  * - Suporta pointer (mouse/touch) e teclado (Enter / Space)
  */
 
-interface ButtonBaseProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonBaseProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     textVariant?: TypographyVariants;
     children?: React.ReactNode;
     rippleColor?: string;
@@ -32,14 +32,13 @@ const StyledButton = styled(Text)<any>`
   /* garante stacking e clipping para o ripple */
   position: relative;
   overflow: hidden;
-  display: inline-flex; /* preserve comportamento do Text, ajuste se necessário */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   border: none;
   text-decoration: none;
-  padding: 0; /* Text/tema normalmente define padding; ajuste conforme seu design */
 
   /* ripple spans criados dinamicamente */
   & .ripple {
@@ -111,7 +110,7 @@ export default function ButtonBase({
     ripple.style.width = ripple.style.height = `${size}px`;
     ripple.style.left = `${x - size / 2}px`;
     ripple.style.top = `${y - size / 2}px`;
-    ripple.style.background = rippleColor ?? "rgba(0, 0, 0, 0.247)"; // cor default (talvez personalizar dinamicamente no futuro?)
+    ripple.style.background = rippleColor ?? "rgba(240, 240, 240, 0.5)"; // cor default (talvez personalizar dinamicamente no futuro?)
 
     // anexa e remove no fim da animação
     button.appendChild(ripple);
