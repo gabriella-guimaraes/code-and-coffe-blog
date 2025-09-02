@@ -74,3 +74,5 @@ export const colors = {
     x900: '#140B60',
   },  
 };
+
+export type ColorVariant = keyof typeof colors;

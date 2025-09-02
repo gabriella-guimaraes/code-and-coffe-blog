@@ -10,14 +10,7 @@ import Text from "../Text/Text";
 import { StyleSheet } from "@/theme/StyleSheet";
 import { TypographyVariants } from "@/theme/theme";
 import { useTheme } from "@/theme/ThemeProvider";
-
-type ColorVariant =
-  | "primary"
-  | "accent"
-  | "neutral"
-  | "warning"
-  | "negative"
-  | "success";
+import { ColorVariant } from "@/theme/defaults/colors";
 
 interface LinkProps {
   href: string;
@@ -43,18 +36,7 @@ const Link = React.forwardRef<HTMLElement, LinkProps>(
     const isIExternalLink = href.startsWith("http");
     const theme = useTheme();
 
-    // Mapeamento explícito entre os "colorVariant" e as chaves reais do tema
-    const variantToThemeKey: Record<ColorVariant, keyof typeof theme.colors> = {
-      primary: "primary",
-      accent: "accent",
-      neutral: "neutral",
-      warning: "warning",
-      negative: "negative",
-      success: "positive",
-    };
-
-    const themeKey = variantToThemeKey[colorVariant];
-    const colorSet = theme.colors[themeKey] ?? theme.colors.primary; // fallback seguro
+    const colorSet = theme.colors[colorVariant] ?? theme.colors.primary;
 
     const currentColorSet = {
       color: colorSet.x500,
