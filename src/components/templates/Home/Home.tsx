@@ -1,12 +1,9 @@
 "use client";
 
 //Components
-import Box from "@/components/atoms/Box/Box";
-import Button from "@/components/atoms/Button/Button";
-import ButtonBase from "@/components/atoms/Button/ButtonBase";
-import Link from "@/components/atoms/Link/Link";
-import Text from "@/components/atoms/Text/Text";
+import Background from "@/components/atoms/Background/Background";
 import Banner from "@/components/molecules/Banner/Banner";
+import Box from "@/components/atoms/Box/Box";
 import Feed from "@/components/organisms/Feed/Feed";
 
 //Styles
@@ -21,37 +18,17 @@ export default function HomeTemplate(){
             tag="main"
             styleSheet={{
             fontFamily: theme.typography.fontFamily,
-            backgroundColor: theme.colors.primary.x050,
             flex: 1,
+            alignItems: 'center',
+            backgroundColor: theme.colors.neutral.x999,
+            color: theme.colors.neutral.x000,
             }}
         >
-                <Banner />
-                <Feed />
-                <Feed.Posts />
-
-                <Link href="https://www.alura.com.br/" colorVariant="accent">
-                    Ir para a Alura
-                </Link>
-
-                <ButtonBase href="/sobre" textVariant="body1" styleSheet={{marginBottom: '16px'}}>
-                    Ir para a página Sobre
-                </ButtonBase>
-
-                <ButtonBase textVariant="body1">
-                    Quero caféeee
-                </ButtonBase>
-
-                <Text variant="display1" tag="h1" styleSheet={{color: theme.colors.accent.x500}}>
-                    Testando o Text
-                </Text>
-
-                <Button textVariant="heading1" href="https://music.youtube.com/watch?v=bfl76Sr-Rsk&si=oPyxlBgTTfC-6VuA">
-                    Olha a musiquinha 2000s
-                </Button>
-
-                <Button fullWidth={false}>
-                    Hola, amigos, como estão? Tranquilos?
-                </Button>
+                <Background>
+                    <Banner />
+                    <Feed />
+                    <Feed.Posts />
+                </Background>
         </Box>
     )
 }

@@ -6,7 +6,7 @@ import Text from "@/components/atoms/Text/Text";
 
 export default function Banner() {
     return(
-        <Box tag="div" styleSheet={{backgroundColor: { xs: 'red', md: 'blue', sm: 'green' }}}>
+        <Box tag="div" styleSheet={{}}>
             <Text>
                 <Image 
                     styleSheet={{
@@ -17,9 +17,9 @@ export default function Banner() {
                     src="https://github.com/gabriella-guimaraes.png" 
                     alt="Imagem de perfil da Gabriella Guimarães"
                  />
-                <Icon name="LinkedIn" size="xl" />
+                <Icon name="LinkedIn" size="md" />
                 <Icon name="Email" size="md" />
-                <Icon name="GitHub" size="lg" />
+                <Icon name="GitHub" size="md" />
             </Text>
         </Box>
     )

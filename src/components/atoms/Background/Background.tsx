@@ -1,13 +1,24 @@
 //Components
 import Box from "../Box/Box";
-import Text from "../Text/Text";
 
-export default function Background() {
+interface BackgroundProps {
+  children?: React.ReactNode;
+}
+
+export default function Background({ children }: BackgroundProps) {
+  const imageUrl = "/images/gradient-bg-code-and-coffe.png";
   return(
-    <Box tag="div" styleSheet={{backgroundColor: { xs: 'red', md: 'blue', sm: 'green' }}}>
-        <Text>
-            Reza 3 ave maria e vai meu filho
-        </Text>
+    <Box 
+      styleSheet={{
+          width: '100%',
+          minHeight: '100%',
+          backgroundImage: `url("${imageUrl}")`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          position: 'relative'
+        }}
+    >
+      {children}
     </Box>
 
   ) 

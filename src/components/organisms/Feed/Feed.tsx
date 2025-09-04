@@ -13,7 +13,7 @@ interface FeedProps {
 
 export default function Feed({ children }: FeedProps) {
   return(
-    <Box tag="div" styleSheet={{backgroundColor: { xs: 'red', md: 'blue', sm: 'green' }}}>
+    <Box tag="div" styleSheet={{}}>
         <Text>
             Feed Base
         </Text>
@@ -24,7 +24,7 @@ export default function Feed({ children }: FeedProps) {
 
 Feed.Posts = () => {
     return(
-        <Box tag="div" styleSheet={{backgroundColor: { xs: 'red', md: 'blue', sm: 'green' }}}>
+        <Box tag="div" styleSheet={{}}>
         <Text>
             Rapaziada, bomba, bomba!
         </Text>
