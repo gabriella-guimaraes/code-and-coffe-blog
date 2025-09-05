@@ -39,7 +39,7 @@ const Link = React.forwardRef<HTMLElement, LinkProps>(
     const colorSet = theme.colors[colorVariant] ?? theme.colors.primary;
 
     const currentColorSet = {
-      color: colorSet.x500,
+      color: colorSet.x050,
       hover: { color: colorSet.x400 },
       focus: { color: colorSet.x600 },
     };

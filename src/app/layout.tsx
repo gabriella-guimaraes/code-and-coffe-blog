@@ -30,6 +30,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;500&family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <ThemeProvider>
         <GlobalStyle />
         <body className={`${roboto.variable} ${spaceGrotesk.variable}`}>

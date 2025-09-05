@@ -2,13 +2,22 @@ export const typography = {
   fontFamily: "'Roboto', sans-serif",
   variants: {
     display1: {
-    //   fontFamily: "'Space Grotesk', sans-serif",
+      fontFamily: "'Space Grotesk', sans-serif",
       fontWeight: {
         xs: '700',
       },
       fontSize: {
-        xs: '48px',
-        md: '60px',
+        xs: '44px',
+        md: '64px',
+      },
+    },
+    display2: {
+      fontWeight: {
+        xs: '300',
+      },
+      fontSize: {
+        xs: '44px',
+        md: '64px',
       },
     },
     heading1: {
