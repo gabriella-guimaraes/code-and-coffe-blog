@@ -1,3 +1,5 @@
+"use client";
+
 //Componentes
 import { ColorVariant } from "@/theme/defaults/colors";
 

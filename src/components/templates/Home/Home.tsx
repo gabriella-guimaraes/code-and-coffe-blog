@@ -29,6 +29,13 @@ export default function HomeTemplate(){
                     <Feed />
                     <Feed.Posts />
                 </Background>
+                <Box
+                    styleSheet={{
+                        width: '100%',
+                        height: '200vh',
+                        backgroundColor: theme.colors.neutral.x000,
+                    }}
+                ></Box>
         </Box>
     )
 }
