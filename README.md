@@ -122,8 +122,8 @@ O layout base foi criado no Figma. Em breve estará disponível.
 ## ✅ Checkpoints / To-do
 
 * [x] Criar estrutura inicial do projeto
-* [ ] Configurar TypeScript e styled-components
-* [ ] Implementar header com título e subtítulo
+* [x] Configurar TypeScript e styled-components
+* [x] Implementar header com título e subtítulo
 * [ ] Implementar lista de posts (cards responsivos)
 * [ ] Implementar página de post único
 * [ ] Integração com CMS (opcional)
