@@ -8,7 +8,7 @@ export const typography = {
       },
       fontSize: {
         xs: '48px',
-        md: '64px',
+        md: '96px',
       },
     },
     display2: {
@@ -17,7 +17,7 @@ export const typography = {
       },
       fontSize: {
         xs: '48px',
-        md: '64px',
+        md: '96px',
       },
     },
     heading1: {

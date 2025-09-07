@@ -4,6 +4,8 @@ import Icon from "@/components/atoms/Icon/Icon";
 import Image from "@/components/atoms/Image/Image";
 import Link from "@/components/atoms/Link/Link";
 import Text from "@/components/atoms/Text/Text";
+
+//Styles
 import theme from "@/theme/theme";
 
 export default function Banner() {
@@ -11,31 +13,30 @@ export default function Banner() {
     <Box
       tag="div"
       styleSheet={{
-        width: "100%",                // garantir largura total do viewport (dentro das margens da página)
+        width: "100%",
         minHeight: "70vh",
         padding: "5rem 0px",
         marginBottom: "24px",
-        // remover display:flex aqui — o controle fica no wrapper interno
         display: "flex",
-        justifyContent: "center",     // centraliza o content wrapper (que tem maxWidth)
+        justifyContent: "center",
         background: "transparent",
       }}
     >
-      {/* Content wrapper: largura limitada (maxWidth) e layout flex responsivo */}
+
       <Box
         tag="div"
         styleSheet={{
           width: "100%",
-          maxWidth: "100vw",                       // ajuste se quiser outro limite
-          padding: { xs: "0px 24px", md: "0px 120px" },                       // margem interna (responsiva já no conteúdo)
+          maxWidth: "100vw",
+          padding: { xs: "0px 24px", md: "0px 120px" },
           display: { xs: "column", md: "row" },
-          flexDirection: { xs: "column", md: "row" }, // empilha em mobile, linha em desktop
+          flexDirection: { xs: "column", md: "row" },
           alignItems: "flex-start",
           justifyContent: "space-between",
           gap: "2.5rem",
         }}
       >
-        {/* LEFT: título — ocupa 75% em desktop, 100% em mobile */}
+
         <Box
           tag="div"
           styleSheet={{
@@ -44,24 +45,31 @@ export default function Banner() {
             justifyContent: "flex-start",
             alignItems: "flex-start",
             gap: "8px",
-            width: { xs: "100%", md: "75%" },         // largura/space em breakpoints
-            // alternativa (mais "flexível"): flexBasis: { md: "75%" }
-            // flexBasis: { md: "75%" }
+            // width: { xs: "100%", md: "67%" },
           }}
         >
           <Text variant="display1">Linhas de Código</Text>
           <Text variant="display2">&</Text>
           <Text variant="display1">Café</Text>
+
+          <Text 
+            variant="body1"
+            styleSheet={{ 
+              color: theme.colors.neutral.x200, 
+              width: { xs: "100%", md: "80%" }
+            }}
+            >
+            Compartilhando estudos, experimentos e aprendizados que encontro em minha jornada na programação.
+          </Text>
         </Box>
 
-        {/* RIGHT: perfil — ocupa ~15% em desktop e 100% em mobile */}
         <Box
           tag="div"
           styleSheet={{
-            width: { xs: "100%", md: "20%" },         // 15% no md
+            // width: { xs: "100%", md: "32%" },
             display: "flex",
             flexDirection: "column",
-            alignItems: { xs: "center", md: "flex-start" }, // center no desktop para avatar
+            alignItems: { xs: "center", md: "flex-start" },
             justifyContent: "flex-start",
             gap: "8px",
           }}
