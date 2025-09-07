@@ -2,7 +2,8 @@
 import Box from "@/components/atoms/Box/Box";
 import ButtonBase from "@/components/atoms/Button/ButtonBase";
 import Icon from "@/components/atoms/Icon/Icon";
-import Text from "@/components/atoms/Text/Text";
+
+//Styles
 import theme from "@/theme/theme";
 
 export default function Menu() {

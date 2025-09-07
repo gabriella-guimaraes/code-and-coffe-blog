@@ -7,7 +7,7 @@ export const typography = {
         xs: '700',
       },
       fontSize: {
-        xs: '44px',
+        xs: '48px',
         md: '64px',
       },
     },
@@ -16,12 +16,12 @@ export const typography = {
         xs: '300',
       },
       fontSize: {
-        xs: '44px',
+        xs: '48px',
         md: '64px',
       },
     },
     heading1: {
-    //   fontFamily: "'Space Grotesk', sans-serif",
+      fontFamily: "'Space Grotesk', sans-serif",
       fontWeight: {
         xs: '700',
         md: '700',
