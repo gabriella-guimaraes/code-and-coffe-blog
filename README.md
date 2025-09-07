@@ -8,9 +8,11 @@
 
 ## 🔎 Descrição
 
-Este repositório contém a versão inicial do blog **Linhas de Código & Café**, construído enquanto acompanho o conteúdo do curso. O objetivo é transformar um layout do Figma em componentes reais no Next.js, criando uma base de componentes reutilizáveis e uma estrutura escalável para projetos pessoais.
+Este repositório contém o blog **Linhas de Código & Café**, construído enquanto acompanho o conteúdo do curso. O objetivo é transformar um layout do Figma em componentes reais no Next.js, criando uma base de componentes reutilizáveis e uma estrutura escalável para projetos pessoais.
 
 O projeto serve tanto como portfólio quanto como ambiente de estudos para práticas de arquitetura de interface, tipagens em TypeScript e técnicas que melhoram o autocomplete e a produtividade.
+
+Nesta fase, o foco vai além da interface: trabalhamos com dados em Markdown/YAML, exploramos a Context API e realizamos integrações com o Node.js através do File System, refletindo práticas mais próximas de aplicações reais.
 
 ---
 
@@ -21,6 +23,11 @@ O projeto serve tanto como portfólio quanto como ambiente de estudos para prát
 * Separar responsabilidade entre visual (design) e lógica.
 * Implementar a aplicação com **Next.js**, **TypeScript** e **styled-components**.
 * Aplicar técnicas de tipagem que melhoram o autocomplete e a experiência de desenvolvimento.
+* Organizar e dinamizar o **tema e configurações do site** com **YAML** e **Context API**
+* Entender como carregar posts a partir de **arquivos Markdown**.
+* Aprender a manipular arquivos via **Node.js File System** dentro do projeto Next.js
+* Avaliar alternativas de **CMS** e refletir sobre custo/benefício em projetos reais.
+* Aplicar boas práticas de otimização em **build time**. 
 
 ---
 
@@ -31,6 +38,8 @@ O projeto serve tanto como portfólio quanto como ambiente de estudos para prát
 * TypeScript
 * styled-components
 * ESLint + Prettier
+* YAML (para configs)
+* Markdown (para posts)
 
 ---
 
@@ -126,6 +135,10 @@ O layout base foi criado no Figma. Em breve estará disponível.
 * [x] Implementar header com título e subtítulo
 * [ ] Implementar lista de posts (cards responsivos)
 * [ ] Implementar página de post único
+* [ ] Implementar YAML para configurações globais
+* [ ] Integrar Markdown para posts
+* [ ] Criar provider com Context API
+* [ ] Otimizar build time (carregamento de dados)
 * [ ] Integração com CMS (opcional)
 * [ ] Deploy para Vercel
 
