@@ -1,5 +1,3 @@
-"use client";
-
 //Components
 import Background from "@/components/atoms/Background/Background";
 import Banner from "@/components/molecules/Banner/Banner";
@@ -8,10 +6,14 @@ import Feed from "@/components/organisms/Feed/Feed";
 
 //Styles
 import theme from "@/theme/theme";
-import { useTheme } from "@/theme/ThemeProvider";
 
-export default function HomeTemplate(){
-    const theme = useTheme();
+//Configs
+import { withTemplateConfig } from "@/services/withTemplateConfig";
+
+export default async function HomeTemplate(){
+    const { templateConfig } = await withTemplateConfig({
+        exemplo: "Ponpon shit",
+    })
 
     return(
         <Box
@@ -28,14 +30,8 @@ export default function HomeTemplate(){
                     <Banner />
                     <Feed />
                     <Feed.Posts />
+                    <p>{templateConfig?.site?.title}</p>
                 </Background>
-                <Box
-                    styleSheet={{
-                        width: '100%',
-                        height: '200vh',
-                        backgroundColor: theme.colors.neutral.x000,
-                    }}
-                ></Box>
         </Box>
     )
 }
