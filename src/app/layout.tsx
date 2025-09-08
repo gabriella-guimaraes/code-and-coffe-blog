@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
+
+// External fonts
 import { Roboto, Space_Grotesk } from "next/font/google";
+
+//Styles
 import "./globals.css";
 import GlobalStyle from "@/theme/GlobalStyle";
+import ThemeProvider from "@/theme/ThemeProvider";
+
+//Components
 import Menu from "@/components/organisms/Menu/Menu";
 import Footer from "@/components/organisms/Footer/Footer";
-import ThemeProvider from "@/theme/ThemeProvider";
 
 
 const roboto = Roboto({

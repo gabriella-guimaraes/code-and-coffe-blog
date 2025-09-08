@@ -1,0 +1,11 @@
+site:
+  title: "Code & Coffee Blog"
+  description: "A personal blog about a developer's journey."
+
+personal:
+  name: "Gabriella Guimarães"
+  avatar: "https://github.com/gabriella-guimaraes.png"
+  socialNetworks:
+    github: "https://github.com/gabriella-guimaraes"
+    linkedin: "https://www.linkedin.com/in/gabriella-guimaraes"
+    email: "mailto:gabriellaguimaraes01@outlook.com"
