@@ -1,10 +1,17 @@
 //Components
 import HomeTemplate from "@/components/templates/Home/Home";
+import templatePageHOC, { createGenerateMetadata } from "@/services/templates/templatePageHOC";
+import { withTemplateConfig } from "@/services/templates/withTemplateConfig";
 
-export default function Home() {
-  return (
-    <div>
-      <HomeTemplate />
-    </div>
-  );
+import type { Metadata } from "next";
+
+const pageTitle = "Home";
+const WrappedHome = templatePageHOC(HomeTemplate, { title: pageTitle });
+
+// Re-exporta a função gerada pelo HOC — o Next vai usar essa função para montar o <head>.
+export const generateMetadata = createGenerateMetadata(pageTitle);
+
+export default async function Home() {
+  const { templateConfig } = await withTemplateConfig();
+  return <WrappedHome templateConfig={templateConfig} />;
 }

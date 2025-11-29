@@ -8,13 +8,13 @@ import Feed from "@/components/organisms/Feed/Feed";
 import theme from "@/theme/theme";
 
 //Configs
-import { withTemplateConfig } from "@/services/withTemplateConfig";
+import { withTemplateConfig } from "@/services/templates/withTemplateConfig";
+import templatePageHOC from "@/services/templates/templatePageHOC";
+import { TemplateConfig } from './../../../services/templates/withTemplateConfig';
 
-export default async function HomeTemplate(){
-    const { templateConfig } = await withTemplateConfig({
-        exemplo: "Ponpon shit",
-    })
+type HomeTemplateProps = { templateConfig: TemplateConfig };
 
+export default function HomeTemplate({ templateConfig }: HomeTemplateProps){
     return(
         <Box
             tag="main"
@@ -35,3 +35,7 @@ export default async function HomeTemplate(){
         </Box>
     )
 }
+
+// export default templatePageHOC(HomeTemplate, {
+//     title: "Home",
+// });
