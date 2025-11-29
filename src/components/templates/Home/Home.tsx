@@ -8,8 +8,6 @@ import Feed from "@/components/organisms/Feed/Feed";
 import theme from "@/theme/theme";
 
 //Configs
-import { withTemplateConfig } from "@/services/templates/withTemplateConfig";
-import templatePageHOC from "@/services/templates/templatePageHOC";
 import { TemplateConfig } from './../../../services/templates/withTemplateConfig';
 
 type HomeTemplateProps = { templateConfig: TemplateConfig };

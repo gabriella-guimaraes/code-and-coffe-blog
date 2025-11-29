@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Head from "next/head";
 import { JSX } from "react";
 import type { Metadata } from "next";
 

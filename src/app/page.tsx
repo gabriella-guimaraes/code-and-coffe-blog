@@ -3,8 +3,6 @@ import HomeTemplate from "@/components/templates/Home/Home";
 import templatePageHOC, { createGenerateMetadata } from "@/services/templates/templatePageHOC";
 import { withTemplateConfig } from "@/services/templates/withTemplateConfig";
 
-import type { Metadata } from "next";
-
 const pageTitle = "Home";
 const WrappedHome = templatePageHOC(HomeTemplate, { title: pageTitle });
 
