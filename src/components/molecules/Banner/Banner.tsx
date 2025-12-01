@@ -1,3 +1,5 @@
+"use client";
+
 //Components
 import Box from "@/components/atoms/Box/Box";
 import Icon from "@/components/atoms/Icon/Icon";
@@ -5,10 +7,15 @@ import Image from "@/components/atoms/Image/Image";
 import Link from "@/components/atoms/Link/Link";
 import Text from "@/components/atoms/Text/Text";
 
+//Hooks
+import { useTemplateConfig } from "@/services/templates/templateConfigContext";
+
 //Styles
 import theme from "@/theme/theme";
 
 export default function Banner() {
+  const templateConfig = useTemplateConfig();
+  console.log("TEMPLATE CONFIG NO BANNER:", templateConfig);
   return (
     <Box
       tag="div"
@@ -80,16 +87,16 @@ export default function Banner() {
               width: { xs: "98px", md: "128px" },
               height: { xs: "98px", md: "128px" },
             }}
-            src="https://github.com/gabriella-guimaraes.png"
+            src={templateConfig.personal?.avatar || "/assets/images/avatar-default.png"}
             alt="Imagem de perfil da Gabriella Guimarães"
           />
 
           <Text variant="heading3" styleSheet={{ marginTop: "8px", textAlign: { xs: "left", md: "center" } }}>
-            Gabriella Guimarães
+            {templateConfig.personal?.name || "Gabriella Guimarães"}
           </Text>
 
           <Text variant="body1" styleSheet={{ marginTop: "8px", color: theme.colors.neutral.x300, textAlign: { xs: "left", md: "center" } }}>
-            Desenvolvedora FullStack
+            {templateConfig.personal?.occupation || "Desenvolvedora FullStack"}
           </Text>
 
           <Text variant="body1" styleSheet={{ marginTop: "6px", marginBottom: "8px", color: theme.colors.neutral.x300, textAlign: { xs: "left", md: "center" } }}>
@@ -107,14 +114,14 @@ export default function Banner() {
               marginTop: "8px",
             }}
           >
-            <Link href="https://www.linkedin.com/in/gabriella-guimaraes/" colorVariant="neutral">
+            <Link href={templateConfig.personal?.socialNetworks?.linkedin || ""} colorVariant="neutral">
               <Icon name="LinkedIn" size="md" />
             </Link>
-            <Link href="mailto:gabriellaguimaraes01@outlook.com" colorVariant="neutral">
+            <Link href={templateConfig.personal?.socialNetworks?.email || ""} colorVariant="neutral">
               <Icon name="Email" size="md" />
             </Link>
 
-            <Link href="https://github.com/gabriella-guimaraes" colorVariant="neutral">
+            <Link href={templateConfig.personal?.socialNetworks?.github || ""} colorVariant="neutral">
               <Icon name="GitHub" size="md" />
             </Link>
           </Box>

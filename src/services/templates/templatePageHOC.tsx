@@ -3,6 +3,7 @@ import { JSX } from "react";
 import type { Metadata } from "next";
 
 import { withTemplateConfig, type TemplateConfig } from "./withTemplateConfig";
+import { TemplateConfigProvider } from "./templateConfigContext";
 
 interface TemplatePageHOCProps {
     title?: string;
@@ -36,6 +37,11 @@ export default function templatePageHOC(
     const fullTitle = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
 
     // Passa pageTitle e fullTitle para o componente (opcional, útil para render UI)
-    return <Component {...props} pageTitle={pageTitle} fullTitle={fullTitle} />;
+    return(
+      <TemplateConfigProvider value={props.templateConfig}>
+        <Component {...props} pageTitle={pageTitle} fullTitle={fullTitle} />
+
+      </TemplateConfigProvider>
+    ) 
   };
 }

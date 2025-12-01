@@ -9,6 +9,8 @@ export interface TemplateConfig {
   personal?: {
     name?: string;
     avatar?: string;
+    occupation?: string;
+    location?: string;
     socialNetworks?: {
       github?: string;
       linkedin?: string;

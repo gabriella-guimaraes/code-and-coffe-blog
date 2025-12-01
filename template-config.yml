@@ -5,6 +5,8 @@ site:
 personal:
   name: "Gabriella Guimarães"
   avatar: "https://github.com/gabriella-guimaraes.png"
+  occupation: "Desenvolvedora FullStack"
+  location: "São Paulo, Brasil"
   socialNetworks:
     github: "https://github.com/gabriella-guimaraes"
     linkedin: "https://www.linkedin.com/in/gabriella-guimaraes"
