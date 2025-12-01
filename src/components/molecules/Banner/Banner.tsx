@@ -15,7 +15,7 @@ import theme from "@/theme/theme";
 
 export default function Banner() {
   const templateConfig = useTemplateConfig();
-  console.log("TEMPLATE CONFIG NO BANNER:", templateConfig);
+  
   return (
     <Box
       tag="div"
