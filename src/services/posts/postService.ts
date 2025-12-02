@@ -36,7 +36,7 @@ export default function postService() {
 
         const post: Post = {
             metadata: {
-                date: data.date,
+                date: new Date(data.date).toISOString(),
                 url: data.url,
                 excerpt: data.excerpt,
                 tags: data.tags || [],
