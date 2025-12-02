@@ -135,9 +135,9 @@ O layout base foi criado no Figma. Em breve estará disponível.
 * [x] Implementar header com título e subtítulo
 * [ ] Implementar lista de posts (cards responsivos)
 * [ ] Implementar página de post único
-* [ ] Implementar YAML para configurações globais
-* [ ] Integrar Markdown para posts
-* [ ] Criar provider com Context API
+* [x] Implementar YAML para configurações globais
+* [x] Integrar Markdown para posts
+* [x] Criar provider com Context API
 * [ ] Otimizar build time (carregamento de dados)
 * [ ] Integração com CMS (opcional)
 * [ ] Deploy para Vercel
