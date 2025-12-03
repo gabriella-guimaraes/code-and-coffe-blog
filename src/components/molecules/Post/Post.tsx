@@ -5,6 +5,7 @@ import Text from "@/components/atoms/Text/Text";
 
 // Styles
 import theme from "@/theme/theme";
+import TagList from "../TagList/TagList";
 
 interface FeedPostProps {
   title: string;
@@ -87,8 +88,8 @@ export default function FeedPost({
         {excerpt}
       </Text>
 
-      {/* Futuro componente de tags */}
-      {/* <TagsList tags={tags} /> */}
+      {/* Tags */}
+      <TagList tags={tags} />
 
       {/* Placeholder da imagem */}
       <Box
