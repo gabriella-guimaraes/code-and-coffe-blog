@@ -12,7 +12,8 @@ import { TemplateConfig } from './../../../services/templates/withTemplateConfig
 
 type HomeTemplateProps = { templateConfig: TemplateConfig };
 
-export default function HomeTemplate({ templateConfig }: HomeTemplateProps){
+export default function HomeTemplate({ templateConfig }: HomeTemplateProps,){
+    console.log("Posts no template da Home", templateConfig.posts);
     return(
         <Box
             tag="main"
@@ -26,9 +27,9 @@ export default function HomeTemplate({ templateConfig }: HomeTemplateProps){
         >
                 <Background>
                     <Banner />
-                    <Feed />
-                    <Feed.Posts />
-                    <p>{templateConfig?.site?.title}</p>
+                    <Feed>
+                        <Feed.Posts posts={templateConfig.posts} />
+                    </Feed>
                 </Background>
         </Box>
     )

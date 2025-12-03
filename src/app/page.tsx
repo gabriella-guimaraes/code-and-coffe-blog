@@ -11,9 +11,8 @@ const WrappedHome = templatePageHOC(HomeTemplate, { title: pageTitle });
 export const generateMetadata = createGenerateMetadata(pageTitle);
 
 const posts = await postService().getAllPosts();
-console.log(posts);
 
 export default async function Home() {
-  const { templateConfig } = await withTemplateConfig(); // passar os posts para o template via props
+  const { templateConfig } = await withTemplateConfig({posts});
   return <WrappedHome templateConfig={templateConfig} />;
 }

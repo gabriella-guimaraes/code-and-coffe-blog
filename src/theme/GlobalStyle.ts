@@ -8,14 +8,18 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     min-height: 100%;
     flex-direction: column;
+    /* overflow: hidden; */
   }
   body {
     display: flex;
     flex: 1;
     flex-direction: column;
+    overflow-x: hidden;
+    max-width: 100%;
   }
   #__next {
     width: 100%;
+    max-width: 100%;
     overflow: hidden;
     display: flex;
     flex: 1;

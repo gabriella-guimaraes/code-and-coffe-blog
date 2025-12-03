@@ -29,6 +29,7 @@ export default function Menu() {
         paddingTop: `calc(env(safe-area-inset-top) + 0px)`,
         isolation: "isolate",
         mixBlendMode: "difference",
+        maxWidth: "100vw",
       }}
     >
       <ButtonBase

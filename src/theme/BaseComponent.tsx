@@ -26,6 +26,7 @@ const StyledBaseComponent = styled.div<StyledBaseComponent>`
     flex-direction: column;
     align-items: flex-start;
     flex-shrink: 0;
+    max-width: 100%;
     ${({ $styleSheet }) => parseStyleSheet($styleSheet as any)}
 `;
 
