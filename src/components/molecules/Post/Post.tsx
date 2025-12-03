@@ -1,12 +1,15 @@
+// Componentes
 import Box from "@/components/atoms/Box/Box";
 import Link from "@/components/atoms/Link/Link";
 import Text from "@/components/atoms/Text/Text";
+
+// Styles
 import theme from "@/theme/theme";
 
 interface FeedPostProps {
   title: string;
   excerpt: string;
-  url: string;
+  url?: string;
   date: string;
   tags: string[];
 }
@@ -51,17 +54,27 @@ export default function FeedPost({
       </Text>
 
       {/* Título */}
-      <Link
-        href={url}
-        styleSheet={{
-          textDecoration: "none",
-          color: theme.colors.neutral.x000,
-        }}
-        variant="heading3"
-      >
-        {title}
-      </Link>
-      {/* Trocar para um <Text></Text> caso o post não tenha url */}
+      {url ? (
+        <Link
+          href={url}
+          styleSheet={{
+            textDecoration: "none",
+            color: theme.colors.neutral.x000,
+          }}
+          variant="heading3"
+        >
+          {title}
+        </Link>
+      ) : (
+        <Text
+          variant="heading3"
+          styleSheet={{
+            color: theme.colors.neutral.x000,
+          }}
+        >
+          {title}
+        </Text>
+      )}
 
       {/* Descrição */}
       <Text

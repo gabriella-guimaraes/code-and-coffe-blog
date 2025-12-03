@@ -5,6 +5,8 @@ import Box from "@/components/atoms/Box/Box";
 import Text from "@/components/atoms/Text/Text";
 import FeedPost from "@/components/molecules/Post/Post";
 import type { Post } from "@/services/posts/postService";
+
+//Styles
 import theme from "@/theme/theme";
 
 //React
