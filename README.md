@@ -60,6 +60,8 @@ src/
 │   └── templates/      # Estruturas de página (ex: Home)
 │
 ├── theme/              # Sistema de estilos (BaseComponent, StyleSheet, theme)
+│   ├── defaults/       # Valores padrão do tema
+│   ├── utils/          # Utilitários de estilo
 │
 ├── public/             # Arquivos estáticos (favicon, imagens)
 └── ...
@@ -133,13 +135,12 @@ O layout base foi criado no Figma. Em breve estará disponível.
 * [x] Criar estrutura inicial do projeto
 * [x] Configurar TypeScript e styled-components
 * [x] Implementar header com título e subtítulo
-* [ ] Implementar lista de posts (cards responsivos)
+* [x] Implementar lista de posts (cards responsivos)
 * [ ] Implementar página de post único
 * [x] Implementar YAML para configurações globais
 * [x] Integrar Markdown para posts
 * [x] Criar provider com Context API
-* [ ] Otimizar build time (carregamento de dados)
-* [ ] Integração com CMS (opcional)
+* [x] Otimizar build time (carregamento de dados)
 * [ ] Deploy para Vercel
 
 ---
