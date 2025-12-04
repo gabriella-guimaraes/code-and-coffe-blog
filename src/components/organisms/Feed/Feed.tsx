@@ -68,6 +68,7 @@ Feed.Posts = ({ posts }: FeedPostsProps) => {
             url={post.metadata.url}
             date={post.metadata.date}
             tags={post.metadata.tags}
+            image={post.image}
           />
         </Box>
       ))}

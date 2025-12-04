@@ -13,6 +13,7 @@ export interface Post {
   slug: string;
   title: string;
   content: string;
+  image?: string;
 }
 
 export default function postService() {
@@ -37,13 +38,14 @@ export default function postService() {
         const post: Post = {
             metadata: {
                 date: new Date(data.date).toISOString(),
-                url: data.url,
+                url: data.url || "",
                 excerpt: data.excerpt,
                 tags: data.tags || [],
             },
             content: content,
             title: data.title,
             slug: postFileName.replace(/\.mdx?$/, ""),
+            image: data.image || "",
         }
         console.log("Parsed post:", post);
         return post;

@@ -6,6 +6,8 @@ import Text from "@/components/atoms/Text/Text";
 // Styles
 import theme from "@/theme/theme";
 import TagList from "../TagList/TagList";
+import ButtonBase from "@/components/atoms/Button/ButtonBase";
+import Image from "@/components/atoms/Image/Image";
 
 interface FeedPostProps {
   title: string;
@@ -13,6 +15,7 @@ interface FeedPostProps {
   url?: string;
   date: string;
   tags: string[];
+  image?: string;
 }
 
 export default function FeedPost({
@@ -21,6 +24,7 @@ export default function FeedPost({
   url,
   date,
   tags,
+  image,
 }: FeedPostProps) {
   const postDate = new Date(date)
     .toLocaleDateString("pt-BR", {
@@ -30,7 +34,7 @@ export default function FeedPost({
     })
     .replace(".", "")
     .replace(/de /g, "");
-
+  console.log("Image url in FeedPost:", image);
   return (
     <Box
       tag="div"
@@ -92,7 +96,7 @@ export default function FeedPost({
       <TagList tags={tags} />
 
       {/* Placeholder da imagem */}
-      <Box
+      {/* <Box
         tag="div"
         styleSheet={{
           width: "100%",
@@ -100,7 +104,29 @@ export default function FeedPost({
           borderRadius: "12px",
           backgroundColor: theme.colors.neutral.x800,
         }}
-      />
+      /> */}
+      {image && (
+        <ButtonBase
+          href={url || "#"}
+          styleSheet={{
+            hover: {
+              opacity: 0.8
+            }
+          }}
+        >
+          <Image
+            src={image}
+            alt="Post Image Description"
+            styleSheet={{
+              width: "100%",
+              height: "auto",
+              borderRadius: "12px",
+              objectFit: "cover",
+              marginTop: "24px",
+            }}
+          />
+        </ButtonBase>
+      )}
     </Box>
   );
 }
