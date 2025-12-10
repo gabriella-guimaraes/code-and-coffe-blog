@@ -141,13 +141,13 @@ O layout base foi criado no Figma. Em breve estará disponível.
 * [x] Integrar Markdown para posts
 * [x] Criar provider com Context API
 * [x] Otimizar build time (carregamento de dados)
-* [ ] Deploy para Vercel
+* [x] Deploy para Vercel
 
 ---
 
 ## 📦 Deploy
 
-Em breve
+Projeto hospedado no Vercel: [https://code-and-coffe-blog.vercel.app](https://code-and-coffe-blog.vercel.app)
 
 ---
 
