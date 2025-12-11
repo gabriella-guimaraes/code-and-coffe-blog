@@ -43,6 +43,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;500&family=Roboto:wght@400;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/logo.svg"></link>
       </head>
       <ThemeProvider>
         <GlobalStyle />
