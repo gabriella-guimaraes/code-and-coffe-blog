@@ -22,18 +22,11 @@ export default function postService() {
       const PATH_POSTS = path.resolve(".", "_data", "posts");
       const postFiles = await fs.readdir(PATH_POSTS, { encoding: "utf-8" });
 
-      console.log("Reading posts from:", PATH_POSTS);
-      console.log("Found post files:", postFiles);
-
       const postsPromise = postFiles.map(async (postFileName) => {
         const filePath = path.join(PATH_POSTS, postFileName);
         const postFile = await fs.readFile(filePath, { encoding: "utf-8" });
 
-        console.log(`Reading file: ${postFile}`);
-
         const { data, content } = matter(postFile);
-        // console.log(data);
-        // console.log(content);
 
         const post: Post = {
             metadata: {
@@ -47,10 +40,17 @@ export default function postService() {
             slug: postFileName.replace(/\.mdx?$/, ""),
             image: data.image || "",
         }
-        console.log("Parsed post:", post);
+
         return post;
       });
+
       const posts = await Promise.all(postsPromise);
+
+      posts.sort((a, b) => {
+        const ta = a.metadata?.date ? new Date(a.metadata.date).getTime() : 0;
+        const tb = b.metadata?.date ? new Date(b.metadata.date).getTime() : 0;
+        return tb - ta;
+      });
 
       console.log("Post collection:", posts);
       return posts;
