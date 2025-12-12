@@ -8,6 +8,7 @@ import theme from "@/theme/theme";
 import TagList from "../TagList/TagList";
 import ButtonBase from "@/components/atoms/Button/ButtonBase";
 import Image from "@/components/atoms/Image/Image";
+import { formatDate } from "@/utils/formatDate";
 
 interface FeedPostProps {
   title: string;
@@ -28,14 +29,7 @@ export default function FeedPost({
   image,
   slug,
 }: FeedPostProps) {
-  const postDate = new Date(date)
-    .toLocaleDateString("pt-BR", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    })
-    .replace(".", "")
-    .replace(/de /g, "");
+  const postDate = formatDate(date);
   
   return (
     <Box

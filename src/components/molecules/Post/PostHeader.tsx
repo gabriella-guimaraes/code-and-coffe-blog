@@ -7,6 +7,7 @@ import Image from "@/components/atoms/Image/Image";
 
 // Styles
 import theme from "@/theme/theme";
+import { formatDate } from "@/utils/formatDate";
 
 interface PostHeaderProps {
   title: string;
@@ -23,16 +24,8 @@ export default function PostHeader({
   tags,
   image,
 }: PostHeaderProps) {
-  console.log(title, excerpt, date, tags);
+  const postDate = formatDate(date);
 
-  const postDate = new Date(date)
-    .toLocaleDateString("pt-BR", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    })
-    .replace(".", "")
-    .replace(/de /g, "");
   return (
     <Box
       tag="div"
@@ -97,6 +90,7 @@ export default function PostHeader({
               styleSheet={{
                 width: "100vw",
                 height: "auto",
+                maxHeight: "70vh",
                 borderRadius: "12px",
                 objectFit: "cover",
                 marginTop: "24px",
