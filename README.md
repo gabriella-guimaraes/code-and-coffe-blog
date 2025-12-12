@@ -47,27 +47,50 @@ Nesta fase, o foco vai além da interface: trabalhamos com dados em Markdown/YAM
 
 ```text
 src/
-├── app/                # Arquitetura do Next.js (App Router)
-│   ├── layout.tsx      # Layout global
-│   ├── page.tsx        # Página inicial
-│   ├── globals.css     # Estilos globais
-│   └── page.module.css # CSS escopo de página
+├── app/                        # Arquitetura do Next.js
+│   ├── layout.tsx              # Layout global (fonts, providers, Menu, Footer)
+│   ├── page.tsx                # Página inicial
+│   ├── globals.css             # Mantido vazio (estilos via ThemeProvider)
+│   └── sobre/                  # Página institucional (WIP)
+│       └── page.tsx
 │
-├── components/         # Componentes reutilizáveis (Atomic Design)
-│   ├── atoms/          # Elementos básicos (ex: Background, Button)
-│   ├── molecules/      # Combinação simples de atoms (ex: Banner)
-│   ├── organisms/      # Seções completas (ex: Feed, Menu, Footer)
-│   └── templates/      # Estruturas de página (ex: Home)
+├── components/
+│   ├── atoms/                  # Elementos básicos (Background, Box, Text...)
+│   ├── molecules/              # Combos simples (Banner, CardPreview...)
+│   ├── organisms/              # Seções completas (Feed, Menu, Footer)
+│   └── templates/              # Templates de página (HomeTemplate)
 │
-├── theme/              # Sistema de estilos (BaseComponent, StyleSheet, theme)
-│   ├── defaults/       # Valores padrão do tema
-│   ├── utils/          # Utilitários de estilo
+├── services/
+│   ├── posts/                  # Leitura de posts (Markdown + YAML)
+│   │   └── postService.ts
+│   └── templates/
+│       ├── templatePageHOC.ts  # HOC para padronização de páginas
+│       └── withTemplateConfig.ts
 │
-├── public/             # Arquivos estáticos (favicon, imagens)
-└── ...
+├── theme/
+│   ├── GlobalStyle.tsx
+│   ├── ThemeProvider.tsx
+│   └── theme.ts                # Tokens, cores e tipografia
+│
+└── public/                     # Arquivos estáticos (favicon, imagens)
 ```
 
 ---
+
+## 📚 Como o blog carrega e exibe os posts
+1. Os posts são escritos em arquivos Markdown com metadados em YAML.
+
+2. O postService lê os arquivos usando Node File System.
+
+3. Os dados são parseados e enviados para o componente de página via:
+- withTemplateConfig() → prepara configurações + dados
+- templatePageHOC() → injeta metadados e estrutura
+
+4. O HomeTemplate renderiza o Feed com os posts.
+
+5. O Feed.Posts exibe a lista ordenada cronologicamente.
+
+Esse fluxo imita um mini-CMS estático e é um dos diferenciais arquiteturais do projeto.Os posts são escritos em arquivos Markdown com metadados em YAML.
 
 ## ⚙️ Como rodar localmente
 
@@ -76,8 +99,8 @@ src/
 1. Clone o repositório
 
 ```bash
-git clone https://github.com/gabriella-guimaraes/code-and-coffe-blog.git
-cd nome-do-repositorio
+git clone https://github.com/gabriella-guimaraes/code-and-coffee-blog.git
+cd code-and-coffee-blog
 ```
 
 2. Instale as dependências
@@ -120,7 +143,16 @@ http://localhost:3000
 
 ## 🧩 Componentização e padrões
 
-* Organização do projeto com Atomic Design System
+* Arquitetura baseada em Atomic Design
+(atoms → molecules → organisms → templates)
+
+* Temas globais com ThemeProvider
+
+* HOCs para padronização de páginas
+
+* Tipagem forte com TypeScript
+
+* Organização clara entre UI, lógica e dados
 
 ---
 
