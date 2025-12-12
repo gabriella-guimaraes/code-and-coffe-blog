@@ -55,5 +55,11 @@ export default function postService() {
       console.log("Post collection:", posts);
       return posts;
     },
+
+    async getPostBySlug(slug: string) {
+      const posts = await postService().getAllPosts();
+
+      return posts.find((post) => post.slug === slug) || null
+    },
   };
 }

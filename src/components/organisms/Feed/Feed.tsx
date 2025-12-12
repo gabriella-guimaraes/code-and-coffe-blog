@@ -69,6 +69,7 @@ Feed.Posts = ({ posts }: FeedPostsProps) => {
             date={post.metadata.date}
             tags={post.metadata.tags}
             image={post.image}
+            slug={`/posts/${post.slug}`}
           />
         </Box>
       ))}
