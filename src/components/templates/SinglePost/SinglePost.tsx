@@ -7,6 +7,7 @@ import Box from "@/components/atoms/Box/Box";
 //Styles
 import theme from "@/theme/theme";
 import PostHeader from "@/components/molecules/Post/PostHeader";
+import PostContent from "@/components/molecules/Post/PostContent";
 
 type SinglePostProps = {
   templateConfig: TemplateConfig;
@@ -28,6 +29,7 @@ export default function SinglePost({ templateConfig }: SinglePostProps) {
       }}
     >
       <PostHeader title={post?.title || ""} excerpt={post?.metadata.excerpt || ""} date={post?.metadata.date || ""} tags={post?.metadata.tags || []} image={post?.image || ""} />
+      <PostContent content={post?.content || ""} />
     </Box>
   );
 }

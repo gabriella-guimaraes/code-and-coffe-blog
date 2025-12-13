@@ -1,3 +1,14 @@
+export type ResponsiveValue<T> = {
+  xs: T;
+  md?: T;
+};
+export interface TypographyToken {
+  fontFamily?: string;
+  fontWeight?: ResponsiveValue<string>;
+  fontSize?: ResponsiveValue<string>;
+  lineHeight?: ResponsiveValue<string>;
+}
+
 export const typography = {
   fontFamily: "'Roboto', sans-serif",
   variants: {
@@ -149,5 +160,5 @@ export const typography = {
         xs: '8px',
       },
     },
-  }
+  } satisfies Record<string, TypographyToken>,
 } as const;

@@ -9,7 +9,7 @@ tags:
     - livros
 ---
 
-# Afinal, vale a pena investir em livros de programação em 2025?
+## Afinal, vale a pena investir em livros de programação em 2025?
 Tenho programado desde 2020 e, mesmo depois de tantos cursos, vídeos e projetos práticos, uma coisa ficou clara: nenhum formato me fez evoluir tanto quanto voltar para algo tão simples quanto… um livro. Ler programação em 2025 pode parecer “retrô”, mas é exatamente isso que deixa o aprendizado mais profundo e menos caótico.
 
 ## Por que ler livros de programação ainda importa
