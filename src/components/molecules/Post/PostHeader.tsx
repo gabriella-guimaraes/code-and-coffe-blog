@@ -33,6 +33,7 @@ export default function PostHeader({
         width: "100%",
         minHeight: "70vh",
         padding: "5rem 0px",
+        paddingBottom: { xs: "0.25rem", md: "1rem" },
         marginBottom: "24px",
         display: "flex",
         justifyContent: "center",
@@ -49,7 +50,6 @@ export default function PostHeader({
           flexDirection: "column",
           alignItems: "flex-start",
           justifyContent: "space-between",
-          gap: "1.5rem",
         }}
       >
         <Text variant="display1">{title}</Text>

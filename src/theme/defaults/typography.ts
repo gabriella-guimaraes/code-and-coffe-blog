@@ -7,6 +7,8 @@ export interface TypographyToken {
   fontWeight?: ResponsiveValue<string>;
   fontSize?: ResponsiveValue<string>;
   lineHeight?: ResponsiveValue<string>;
+  marginTop?: ResponsiveValue<string>;
+  marginBottom?: ResponsiveValue<string>;
 }
 
 export const typography = {
@@ -21,6 +23,8 @@ export const typography = {
         xs: '48px',
         md: '96px',
       },
+      // marginTop: { xs: '2rem' },
+      marginBottom: { xs: '1.5rem' },
     },
     display2: {
       fontWeight: {
@@ -30,6 +34,7 @@ export const typography = {
         xs: '48px',
         md: '96px',
       },
+      marginBottom: { xs: '1.5rem' },
     },
     heading1: {
       fontFamily: "'Space Grotesk', sans-serif",
@@ -41,6 +46,8 @@ export const typography = {
         xs: '36px',
         md: '48px',
       },
+      marginTop: { xs: '2rem' },
+      marginBottom: { xs: '2rem' },
     },
     heading2: {
     //   fontFamily: "'Space Grotesk', sans-serif",
@@ -52,6 +59,8 @@ export const typography = {
         xs: '24px',
         md: '36px',
       },
+      marginTop: { xs: '1.75rem' },
+      marginBottom: { xs: '1.75rem' },
     },
     heading3: {
       fontWeight: {
@@ -66,6 +75,8 @@ export const typography = {
         xs: '20px',
         md: '30px',
       },
+      marginTop: { xs: '0.5rem' },
+      marginBottom: { xs: '0.5rem' },
     },
     heading4: {
       fontWeight: {
@@ -107,6 +118,7 @@ export const typography = {
       fontSize: {
         xs: '18px',
       },
+      marginBottom: { xs: '1rem' },
     },
     body2: {
       fontWeight: {
@@ -120,6 +132,7 @@ export const typography = {
       fontSize: {
         xs: '16px',
       },
+      marginBottom: { xs: '0.75rem' }
     },
     body3: {
       fontWeight: {
@@ -133,6 +146,7 @@ export const typography = {
       fontSize: {
         xs: '14px',
       },
+      marginBottom: { xs: '0.5rem' }
     },
     body4: {
       fontWeight: {
@@ -146,6 +160,7 @@ export const typography = {
       fontSize: {
         xs: '12px',
       },
+      marginBottom: { xs: '0.25rem' }
     },
     body5: {
       fontWeight: {

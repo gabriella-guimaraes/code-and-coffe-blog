@@ -28,7 +28,7 @@ export default function PostContent({ content }: PostContentProps){
         <Box
             tag="article"
             styleSheet={{
-                width: "100%",
+                width: { xs: "100%", md: "80%" },
                 padding: { xs: "0px 24px", md: "0px 120px" },
                 marginBottom: "24px",
                 display: "flex",

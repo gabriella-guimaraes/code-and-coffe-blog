@@ -9,6 +9,9 @@ const applyTypography = (token: TypographyToken) => css`
   font-size: ${token.fontSize?.xs};
   line-height: ${token.lineHeight?.xs};
 
+  margin-top: ${token.marginTop?.xs ?? '0'};
+  margin-bottom: ${token.marginBottom?.xs ?? '0'};
+
   @media (min-width: 768px) {
     ${token.fontWeight?.md &&
     css`
@@ -50,5 +53,11 @@ export const PostMarkdownStyles = css`
 
   ul {
     padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  li {
+    ${applyTypography(theme.typography.variants.body1)}
+    margin-bottom: 0.25rem;
   }
 `;
