@@ -8,6 +8,7 @@ import theme from "@/theme/theme";
 import TagList from "../TagList/TagList";
 import ButtonBase from "@/components/atoms/Button/ButtonBase";
 import Image from "@/components/atoms/Image/Image";
+import { formatDate } from "@/utils/formatDate";
 
 interface FeedPostProps {
   title: string;
@@ -16,6 +17,7 @@ interface FeedPostProps {
   date: string;
   tags: string[];
   image?: string;
+  slug: string;
 }
 
 export default function FeedPost({
@@ -25,16 +27,10 @@ export default function FeedPost({
   date,
   tags,
   image,
+  slug,
 }: FeedPostProps) {
-  const postDate = new Date(date)
-    .toLocaleDateString("pt-BR", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    })
-    .replace(".", "")
-    .replace(/de /g, "");
-  console.log("Image url in FeedPost:", image);
+  const postDate = formatDate(date);
+  
   return (
     <Box
       tag="div"
@@ -59,7 +55,17 @@ export default function FeedPost({
       </Text>
 
       {/* Título */}
-      {url ? (
+      <Link
+          href={slug}
+          styleSheet={{
+            textDecoration: "none",
+            color: theme.colors.neutral.x000,
+          }}
+          variant="heading3"
+        >
+          {title}
+      </Link>
+      {/* {url ? (
         <Link
           href={url}
           styleSheet={{
@@ -79,7 +85,7 @@ export default function FeedPost({
         >
           {title}
         </Text>
-      )}
+      )} */}
 
       {/* Descrição */}
       <Text
@@ -107,7 +113,7 @@ export default function FeedPost({
       /> */}
       {image && (
         <ButtonBase
-          href={url || "#"}
+          href={slug || "#"}
           styleSheet={{
             hover: {
               opacity: 0.8

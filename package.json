@@ -15,7 +15,9 @@
     "next": "15.5.7",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-markdown": "^10.1.0",
     "read-yaml-file": "^2.1.0",
+    "remark-gfm": "^4.0.1",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {

@@ -51,12 +51,12 @@ export default function Banner() {
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "flex-start",
-            gap: "8px",
+            // gap: "8px",
             // width: { xs: "100%", md: "67%" },
           }}
         >
           <Text variant="display1">Linhas de Código</Text>
-          <Text variant="display2">&</Text>
+          <Text variant="display2" styleSheet={{ marginTop: "-1rem", marginBottom: "-1rem" }}>&</Text>
           <Text variant="display1">Café</Text>
 
           <Text 
@@ -78,7 +78,7 @@ export default function Banner() {
             flexDirection: "column",
             alignItems: { xs: "center", md: "flex-start" },
             justifyContent: "flex-start",
-            gap: "8px",
+            // gap: "8px",
           }}
         >
           <Image
@@ -91,15 +91,15 @@ export default function Banner() {
             alt="Imagem de perfil da Gabriella Guimarães"
           />
 
-          <Text variant="heading3" styleSheet={{ marginTop: "8px", textAlign: { xs: "left", md: "center" } }}>
+          <Text variant="heading3" styleSheet={{  textAlign: { xs: "left", md: "center" } }}>
             {templateConfig.personal?.name || "Gabriella Guimarães"}
           </Text>
 
-          <Text variant="body1" styleSheet={{ marginTop: "8px", color: theme.colors.neutral.x300, textAlign: { xs: "left", md: "center" } }}>
+          <Text variant="body1" styleSheet={{  color: theme.colors.neutral.x300, textAlign: { xs: "left", md: "center" } }}>
             {templateConfig.personal?.occupation || "Desenvolvedora FullStack"}
           </Text>
 
-          <Text variant="body1" styleSheet={{ marginTop: "6px", marginBottom: "8px", color: theme.colors.neutral.x300, textAlign: { xs: "left", md: "center" } }}>
+          <Text variant="body1" styleSheet={{  marginBottom: "8px", color: theme.colors.neutral.x300, textAlign: { xs: "left", md: "center" } }}>
             @gabriella-guimaraes - Brasil
           </Text>
 
